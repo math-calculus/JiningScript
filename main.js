@@ -38,7 +38,10 @@ assignment = (name, value) => {
 
 expression = (t) => {
     if (assignment_dic.hasOwnProperty(t)) {
-        return assignment_dic[t]
+        if (assignment_dic[t]==true || assignment_dic[t]==false){
+            return assignment_dic[t]
+        }
+        return num(assignment_dic[t])
     }
     var ope = t.match(".*<.*")
     if (ope != null) {
